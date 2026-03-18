@@ -1,0 +1,55 @@
+{
+  "factor_id": "ma_golden_cross",
+  "factor_name_en": "Moving-Average Golden-Cross Baseline",
+  "factor_name_zh": "均线金叉基线因子",
+  "family": "Baseline",
+  "status": "Baseline",
+  "detail_ready": true,
+  "short_desc_en": "A moving-average crossover baseline retained as a simple trend-following reference.",
+  "short_desc_zh": "一个均线交叉基线，用来保留最直观的趋势跟随型参考。",
+  "metrics": {
+    "ic_mean": -0.00020208134438406505,
+    "rankic_mean": -0.010369345109280748,
+    "annual_return": -0.1114852037254409,
+    "sharpe": -0.6141736906954836,
+    "max_drawdown": -0.592012384833571,
+    "icir": -0.0009720757204553411,
+    "rankicir": -0.04972566735664903,
+    "avg_turnover": 0.10784024371794823,
+    "ann_vol": 0.1682069439565946,
+    "n_days": 1699,
+    "ic_std": 0.20788642297269375,
+    "rankic_std": 0.20853103961196448
+  },
+  "description": {
+    "motivation_en": "This baseline introduces a simple rule-based trend-following benchmark that is structurally different from return-ranking baselines.",
+    "motivation_zh": "这个基线提供了一个与收益排序类基线不同的、规则更直接的趋势跟随 benchmark。",
+    "construction_en": "It is built from a moving-average crossover style rule and then evaluated in the same portfolio construction and backtest framework as the other factors.",
+    "construction_zh": "它由均线交叉类规则构造，并在与其他因子相同的组合和回测框架下进行评估。",
+    "interpretation_en": "In the current package this baseline is not competitive, but it remains useful because it covers a classic trend heuristic that many readers will recognize immediately.",
+    "interpretation_zh": "在当前结果中，这个基线并不占优，但它仍然有意义，因为它覆盖了一个读者会立刻理解的经典趋势启发式。"
+  },
+  "analysis_note_en": "The moving-average rule is kept to make the baseline set feel complete. It is not the strongest rule in the package, but it covers a familiar trend-following reference that many readers will recognize immediately.",
+  "analysis_note_zh": "保留均线金叉，主要是为了让 baseline 这组对照更完整。它不是包里最强的规则，但它代表了一个读者一眼就能看懂的趋势跟随参考。",
+  "plots": {
+    "nav": "website_data/plots/ma_golden_cross/nav.png",
+    "drawdown": "website_data/plots/ma_golden_cross/drawdown.png",
+    "ic_ts": "website_data/plots/ma_golden_cross/ic_ts.png",
+    "rankic_ts": "website_data/plots/ma_golden_cross/rankic_ts.png",
+    "turnover": "website_data/plots/ma_golden_cross/turnover.png",
+    "yearly_return": "website_data/plots/ma_golden_cross/yearly_return.png",
+    "cost_sensitivity": "website_data/plots/ma_golden_cross/cost_sensitivity.png",
+    "ic_rankic_dist": "website_data/plots/ma_golden_cross/ic_rankic_dist.png",
+    "quantile_return": "website_data/plots/ma_golden_cross/quantile_return.png"
+  },
+  "preview_plot": "website_data/plots/ma_golden_cross/nav.png",
+  "related_factors": [
+    "mom_20d",
+    "rev_5d",
+    "sf_amp_tau5_s20"
+  ],
+  "compare_recommendations": [
+    "sf_amp_tau5_s20",
+    "rev_5d"
+  ]
+}

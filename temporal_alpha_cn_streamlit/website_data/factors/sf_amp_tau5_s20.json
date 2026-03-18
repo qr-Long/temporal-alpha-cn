@@ -1,0 +1,56 @@
+{
+  "factor_id": "sf_amp_tau5_s20",
+  "factor_name_en": "Short-Horizon Structure Function Variability (tau=5, s=20)",
+  "factor_name_zh": "结构函数振幅因子（tau=5, s=20）",
+  "family": "SF Core",
+  "status": "Representative",
+  "detail_ready": true,
+  "short_desc_en": "A short-horizon Structure Function variability signal built to measure structured time-domain variation rather than plain volatility.",
+  "short_desc_zh": "一个以 Structure Function 为核心的短尺度时域变异性信号，测量的是结构化变异强度，而不是普通波动率。",
+  "metrics": {
+    "ic_mean": 0.014812902671713982,
+    "rankic_mean": -0.016100725798372514,
+    "annual_return": 0.1809456528845225,
+    "sharpe": 1.204852873728582,
+    "max_drawdown": -0.1774582223084878,
+    "icir": 0.06218101722829298,
+    "rankicir": -0.0685703462439462,
+    "avg_turnover": 0.06553750003903486,
+    "ann_vol": 0.14703124107703247,
+    "n_days": 1699,
+    "ic_std": 0.23822226351379092,
+    "rankic_std": 0.23480595738998447
+  },
+  "description": {
+    "motivation_en": "This is the main factor on the site. The idea comes from astronomical time-domain work, where a Structure Function is used to ask how active a light curve is at a fixed lag. Here I use the same question on stocks: does a stock show unusually strong structured variation over five trading days?",
+    "motivation_zh": "这是网站里的主代表因子。它直接借用了天文时域分析里 Structure Function 的思路：在一个固定滞后上，看序列是不是表现出明显的结构化变异。放到股票上，问题就变成：一只股票在 5 个交易日这个尺度上，是否出现了持续偏强的变异活动？",
+    "construction_en": "Let daily log return be $r_t$. For $\\tau=5$, the factor uses a 20-day rolling average of squared return differences at that lag:\n\n$$SF_t(5)=\\frac{1}{20}\\sum_{i=0}^{19}(r_{t-i}-r_{t-i-5})^2$$\n\nSo it is not a plain volatility estimate. It is a fixed-lag variability measure that focuses on how active the series is specifically at the 5-day scale.",
+    "construction_zh": "先定义日对数收益为 $r_t$。在固定滞后 $\\tau=5$ 下，因子使用 20 日滚动平均来度量这个尺度上的收益差分平方：\n\n$$SF_t(5)=\\frac{1}{20}\\sum_{i=0}^{19}(r_{t-i}-r_{t-i-5})^2$$\n\n它不是普通波动率，更像一个固定时间尺度上的变异强度指标，专门看 5 日尺度是否异常活跃。",
+    "interpretation_en": "I read this factor as a short-horizon variability signal. The result suggests that some stocks carry structured five-day variation that is not just noise and that this variation is linked to later cross-sectional return differences.",
+    "interpretation_zh": "我更愿意把它理解成一个短尺度的时域变异性信号。结果说明，市场里确实有一部分股票在 5 日尺度上表现出不是纯噪声的结构化变异，而这种变异和后续横截面收益差异有关。"
+  },
+  "analysis_note_en": "The most important part of this page is not that the factor works once. It is that several more complicated variants still fail to beat it. That makes the result cleaner: the useful signal seems to live in the SF amplitude core itself.",
+  "analysis_note_zh": "这个页面最重要的地方，不只是它本身有效，而是很多更复杂的增强版最后也没有超过它。这样反而让结论更干净：真正有用的信号，主要就来自 SF amplitude 的核心结构。",
+  "plots": {
+    "nav": "website_data/plots/sf_amp_tau5_s20/nav.png",
+    "drawdown": "website_data/plots/sf_amp_tau5_s20/drawdown.png",
+    "ic_ts": "website_data/plots/sf_amp_tau5_s20/ic_ts.png",
+    "rankic_ts": "website_data/plots/sf_amp_tau5_s20/rankic_ts.png",
+    "turnover": "website_data/plots/sf_amp_tau5_s20/turnover.png",
+    "yearly_return": "website_data/plots/sf_amp_tau5_s20/yearly_return.png",
+    "cost_sensitivity": "website_data/plots/sf_amp_tau5_s20/cost_sensitivity.png",
+    "ic_rankic_dist": "website_data/plots/sf_amp_tau5_s20/ic_rankic_dist.png",
+    "quantile_return": "website_data/plots/sf_amp_tau5_s20/quantile_return.png"
+  },
+  "preview_plot": "website_data/plots/sf_amp_tau5_s20/nav.png",
+  "related_factors": [
+    "sf_amp_tau10_s20",
+    "sf_amp_tau20_s20",
+    "uniq_knn"
+  ],
+  "compare_recommendations": [
+    "sf_amp_tau10_s20",
+    "sf_amp_tau20_s20",
+    "mom_20d"
+  ]
+}

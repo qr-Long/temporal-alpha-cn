@@ -1,0 +1,35 @@
+[
+  {
+    "label_en": "tau5 vs tau10",
+    "label_zh": "tau5 与 tau10 对比",
+    "factors": [
+      "sf_amp_tau5_s20",
+      "sf_amp_tau10_s20"
+    ]
+  },
+  {
+    "label_en": "tau5 vs tau20",
+    "label_zh": "tau5 与 tau20 对比",
+    "factors": [
+      "sf_amp_tau5_s20",
+      "sf_amp_tau20_s20"
+    ]
+  },
+  {
+    "label_en": "tau5 vs uniqueness",
+    "label_zh": "tau5 与唯一性因子对比",
+    "factors": [
+      "sf_amp_tau5_s20",
+      "uniq_knn"
+    ]
+  },
+  {
+    "label_en": "baseline trio",
+    "label_zh": "三类基线因子对比",
+    "factors": [
+      "mom_20d",
+      "rev_5d",
+      "ma_golden_cross"
+    ]
+  }
+]

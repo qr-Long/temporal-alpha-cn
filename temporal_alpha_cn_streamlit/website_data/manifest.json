@@ -1,0 +1,34 @@
+{
+  "site_name": "Temporal Alpha CN",
+  "default_language": "zh",
+  "supported_languages": [
+    "zh",
+    "en"
+  ],
+  "representative_factors": [
+    "sf_amp_tau5_s20",
+    "sf_amp_tau10_s20"
+  ],
+  "baseline_factors": [
+    "mom_20d",
+    "rev_5d",
+    "ma_golden_cross"
+  ],
+  "selected_extension_factors": [
+    "sf_amp_tau20_s20",
+    "uniq_knn"
+  ],
+  "families": [
+    "SF Core",
+    "Baseline",
+    "Graph / Cross-sectional"
+  ],
+  "statuses": [
+    "Representative",
+    "Exploratory",
+    "Baseline"
+  ],
+  "github_url": "https://github.com/your-username/temporal-alpha-cn",
+  "home_compare_image": "website_data/home_nav_compare.png",
+  "total_researched_factors": 39
+}

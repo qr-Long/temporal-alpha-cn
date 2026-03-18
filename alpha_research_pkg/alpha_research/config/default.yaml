@@ -1,0 +1,50 @@
+# alpha_research default config
+universe:
+  name: HS300
+  csindex_symbol: "000300"
+  as_of: "latest"   # use latest constituents (survivorship bias; documented in report)
+
+data:
+  source: akshare
+  primary_source: tx  # tx (Tencent) recommended; em (Eastmoney) may disconnect
+  adjust: qfq       # qfq / hfq / "" (no adjust)
+  start_date: "2019-01-01"
+  end_date: "2025-12-31"
+  timeout_sec: 20
+  throttle_sec: 0.50          # base sleep between requests
+  throttle_jitter_sec: 0.40   # random jitter
+  max_retries: 3
+  cache_dir: "outputs/cache"
+
+backtest:
+  rebalance: daily
+  signal_time: close
+  trade_time: next_open
+  return_horizon_days: 1      # portfolio holding horizon in days (open->open), fixed at 1 for daily rebalance
+  quantiles: 5
+  long_short: true
+  gross_leverage: 1.0         # if long_short: long=+0.5, short=-0.5 (when gross_leverage=1)
+  weighting: equal
+  max_weight_per_name: 0.02   # optional cap; applied after selection (renormalized)
+
+costs:
+  commission_bps: 2
+  slippage_bps: 3
+  # sensitivity report will re-run PnL using these total costs (bps per trade notional)
+  sensitivity_total_cost_bps: [5, 10, 20]
+
+preprocess:
+  winsorize:
+    method: mad   # mad | percentile | none
+    k: 5
+    p_low: 0.01
+    p_high: 0.99
+  standardize: zscore  # zscore | none
+  fillna: drop         # drop | median
+  neutralize:
+    enabled: false     # placeholder (industry/mcap not included by default)
+
+report:
+  output_dir: "outputs/exp_001"
+  make_plots: true
+  make_report_md: true

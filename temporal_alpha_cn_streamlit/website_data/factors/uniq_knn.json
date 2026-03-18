@@ -1,0 +1,55 @@
+{
+  "factor_id": "uniq_knn",
+  "factor_name_en": "Neighborhood Uniqueness via KNN",
+  "factor_name_zh": "KNN 唯一性因子",
+  "family": "Graph / Cross-sectional",
+  "status": "Exploratory",
+  "detail_ready": true,
+  "short_desc_en": "A similarity-and-neighborhood factor that complements the time-domain SF family with a second research route grounded in local structure and matching logic.",
+  "short_desc_zh": "一个基于相似度与邻域结构的因子，用局部结构与匹配思路补充时域 SF 家族，构成第二条研究路线。",
+  "metrics": {
+    "ic_mean": -0.00038514258458383825,
+    "rankic_mean": -0.013307509014433583,
+    "annual_return": 0.1058468379735537,
+    "sharpe": 0.8133102574012172,
+    "max_drawdown": -0.2649341329290373,
+    "icir": -0.004389287496458593,
+    "rankicir": -0.10254732163869978,
+    "avg_turnover": 0.08467692298885066,
+    "ann_vol": 0.13401456286208535,
+    "n_days": 1699,
+    "ic_std": 0.08774603734537385,
+    "rankic_std": 0.12976944499164308
+  },
+  "description": {
+    "motivation_en": "uniq_knn is kept because I did not want the project to read like a one-family result. This factor comes from a different angle: instead of asking how a stock varies over time, it asks how unusual the stock looks inside its local neighborhood.",
+    "motivation_zh": "保留 uniq_knn，是因为我不希望整个项目最后只剩下一个因子家族。这个因子走的是另一条路：它不是看股票在时间上怎么变，而是看股票在自己的局部邻域里是不是足够特别。",
+    "construction_en": "The factor first builds a cross-sectional feature representation for each stock, then uses KNN to locate its nearest neighborhood. The signal measures local uniqueness or replaceability inside that neighborhood rather than using fixed-lag return differences.",
+    "construction_zh": "它先为每只股票构造一个横截面特征表示，再用 KNN 找到局部邻域。信号的核心不是固定滞后收益差，而是衡量这只股票在局部邻域中到底有多独特、还是有多容易被周围样本替代。",
+    "interpretation_en": "The point of uniq_knn is not that it beats every SF factor. The point is that a similarity- and neighborhood-based route can also produce a coherent standalone signal. That makes the project broader and more believable.",
+    "interpretation_zh": "uniq_knn 的重点，不是它要压过所有 SF 因子，而是它证明了另一条基于相似度和邻域结构的路线也能形成完整的信号画像。这样整个项目就不再只是单一家族的成功案例。"
+  },
+  "analysis_note_en": "This is the main non-SF factor on the site. It broadens the project from time-domain variability into local structure and matching logic.",
+  "analysis_note_zh": "这是网站里最重要的非 SF 因子。它把项目从时域变异性这条线，扩展到了局部结构和匹配逻辑。",
+  "plots": {
+    "nav": "website_data/plots/uniq_knn/nav.png",
+    "drawdown": "website_data/plots/uniq_knn/drawdown.png",
+    "ic_ts": "website_data/plots/uniq_knn/ic_ts.png",
+    "rankic_ts": "website_data/plots/uniq_knn/rankic_ts.png",
+    "turnover": "website_data/plots/uniq_knn/turnover.png",
+    "yearly_return": "website_data/plots/uniq_knn/yearly_return.png",
+    "cost_sensitivity": "website_data/plots/uniq_knn/cost_sensitivity.png",
+    "ic_rankic_dist": "website_data/plots/uniq_knn/ic_rankic_dist.png",
+    "quantile_return": "website_data/plots/uniq_knn/quantile_return.png"
+  },
+  "preview_plot": "website_data/plots/uniq_knn/nav.png",
+  "related_factors": [
+    "sf_amp_tau5_s20",
+    "sf_amp_tau10_s20",
+    "sf_amp_tau20_s20"
+  ],
+  "compare_recommendations": [
+    "sf_amp_tau5_s20",
+    "sf_amp_tau10_s20"
+  ]
+}

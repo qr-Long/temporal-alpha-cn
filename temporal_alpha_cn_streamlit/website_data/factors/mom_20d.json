@@ -1,0 +1,73 @@
+{
+  "factor_id": "mom_20d",
+  "factor_name_en": "20-day momentum baseline (with sign-check)",
+  "factor_name_zh": "20日动量基线（含方向检查）",
+  "family": "Baseline",
+  "status": "Baseline",
+  "detail_ready": true,
+  "short_desc_en": "A 20-day momentum baseline presented with a sign-check diagnostic to explain why the naive direction is negative.",
+  "short_desc_zh": "一个带方向检查诊断的 20 日动量基线，用来解释为什么原始方向是负的。",
+  "metrics": {
+    "ic_mean": 0.001222101583254002,
+    "rankic_mean": -0.011330855529702578,
+    "annual_return": -0.1357287392066569,
+    "sharpe": -0.7566297515003665,
+    "max_drawdown": -0.6630467502130423,
+    "icir": 0.005759954230620752,
+    "rankicir": -0.05370210588666074,
+    "avg_turnover": 0.16997750058001163,
+    "ann_vol": 0.17218510289282474,
+    "n_days": 1699,
+    "ic_std": 0.21217209969432269,
+    "rankic_std": 0.21099462195424054
+  },
+  "description": {
+    "motivation_en": "This baseline anchors the custom factors against a familiar medium-horizon momentum benchmark.",
+    "motivation_zh": "这个基线用一个熟悉的中周期动量基准来锚定自定义因子的表现。",
+    "construction_en": "The raw baseline ranks stocks by their trailing 20-day return. The page also includes a sign-check diagnostic that flips the direction to test whether the horizon is informative but mis-signed.",
+    "construction_zh": "原始基线按过去 20 日收益排序。页面同时加入了一个方向检查诊断：将信号方向翻转，用于测试该 horizon 是否本身有信息，只是原始方向错了。",
+    "interpretation_en": "In the current sample, naive 20-day momentum is negative. That does not necessarily mean the 20-day horizon is useless; it more likely indicates that the baseline loads the wrong direction under this setup.",
+    "interpretation_zh": "在当前样本中，原始 20 日动量是负的。这并不一定意味着 20 日 horizon 完全无效，更可能说明在这套设定下它加载了错误的方向。"
+  },
+  "analysis_note_en": "The useful part of this baseline is the diagnosis. Raw 20-day momentum is negative here, but the sign-check shows that the horizon itself is not empty. The issue is that the naive direction is wrong under this setup.",
+  "analysis_note_zh": "这个基线真正有价值的地方，在于它提供了诊断信息。原始 20 日动量在这里是负的，但方向检查说明这个时间尺度本身不是没有信息，而是原始方向不对。",
+  "plots": {
+    "nav": "website_data/plots/mom_20d/nav.png",
+    "drawdown": "website_data/plots/mom_20d/drawdown.png",
+    "ic_ts": "website_data/plots/mom_20d/ic_ts.png",
+    "rankic_ts": "website_data/plots/mom_20d/rankic_ts.png",
+    "turnover": "website_data/plots/mom_20d/turnover.png",
+    "yearly_return": "website_data/plots/mom_20d/yearly_return.png",
+    "cost_sensitivity": "website_data/plots/mom_20d/cost_sensitivity.png",
+    "ic_rankic_dist": "website_data/plots/mom_20d/ic_rankic_dist.png",
+    "quantile_return": "website_data/plots/mom_20d/quantile_return.png"
+  },
+  "preview_plot": "website_data/plots/mom_20d/nav.png",
+  "related_factors": [
+    "rev_5d",
+    "sf_amp_tau5_s20",
+    "sf_amp_tau10_s20"
+  ],
+  "compare_recommendations": [
+    "sf_amp_tau5_s20",
+    "sf_amp_tau10_s20",
+    "rev_5d"
+  ],
+  "diagnostics": {
+    "title_en": "Momentum sign-check diagnostic",
+    "title_zh": "动量方向 sign-check 诊断",
+    "body_en": "The raw 20-day momentum baseline is negative in this sample. Flipping the direction materially improves both return and drawdown, which suggests that the 20-day horizon itself is not useless; the main issue is that the naive sign points the wrong way under this setup.",
+    "body_zh": "在当前样本中，原始 20 日动量基线是负的。将方向翻转后，收益和回撤都会明显改善，这说明 20 日 horizon 本身未必没有信息，问题更可能在于原始方向在这套设定下指错了。",
+    "plot": "website_data/plots/mom_20d/sign_check_nav.png",
+    "metrics": {
+      "raw_annual_return": -0.1357287392066569,
+      "sign_checked_annual_return": 0.12297402352275277,
+      "raw_sharpe": -0.7566297515003665,
+      "sign_checked_sharpe": 0.7564070495819307,
+      "raw_max_drawdown": -0.6630467502130423,
+      "sign_checked_max_drawdown": -0.1416394081467025,
+      "raw_ic_mean": 0.001222101583254002,
+      "sign_checked_ic_mean": -0.001222101583254002
+    }
+  }
+}

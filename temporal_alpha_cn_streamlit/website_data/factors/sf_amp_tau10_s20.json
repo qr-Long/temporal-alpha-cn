@@ -1,0 +1,56 @@
+{
+  "factor_id": "sf_amp_tau10_s20",
+  "factor_name_en": "Neighbor-Scale Structure Function Variability (tau=10, s=20)",
+  "factor_name_zh": "结构函数振幅因子（tau=10, s=20）",
+  "family": "SF Core",
+  "status": "Representative",
+  "detail_ready": true,
+  "short_desc_en": "A neighboring-horizon Structure Function variability signal used to test whether the astronomy-inspired effect persists beyond the fastest setting.",
+  "short_desc_zh": "一个相邻尺度的 Structure Function 时域变异性信号，用来检验天文启发效果是否不只存在于最短参数。",
+  "metrics": {
+    "ic_mean": 0.015149925419004081,
+    "rankic_mean": -0.01656368446291355,
+    "annual_return": 0.1702207803327706,
+    "sharpe": 1.142484741488511,
+    "max_drawdown": -0.1726473400737391,
+    "icir": 0.06343686957107922,
+    "rankicir": -0.06985237902216912,
+    "avg_turnover": 0.06517908937996052,
+    "ann_vol": 0.1470712530189992,
+    "n_days": 1699,
+    "ic_std": 0.23881893166290336,
+    "rankic_std": 0.23712412797933075
+  },
+  "description": {
+    "motivation_en": "Tau=10 is kept mainly as a robustness check. If the Structure Function idea is real, it should not disappear immediately once the lag moves from 5 days to 10 days.",
+    "motivation_zh": "tau=10 主要是作为稳健性检验保留下来的。如果 Structure Function 这条思路是真的抓到了某种时域结构，它不应该在滞后从 5 日换到 10 日之后立刻失效。",
+    "construction_en": "The form stays the same as the tau=5 version, but the lag moves to $\\tau=10$ while the smoothing window remains 20 days:\n\n$$SF_t(10)=\\frac{1}{20}\\sum_{i=0}^{19}(r_{t-i}-r_{t-i-10})^2$$\n\nThat makes it a direct neighboring-scale test of the same variability logic.",
+    "construction_zh": "构造方式和 tau=5 完全一致，只是固定滞后换成了 $\\tau=10$，平滑窗口仍然是 20 日：\n\n$$SF_t(10)=\\frac{1}{20}\\sum_{i=0}^{19}(r_{t-i}-r_{t-i-10})^2$$\n\n所以它本质上是在相邻时间尺度上复查同一个变异性逻辑。",
+    "interpretation_en": "Tau=10 is less about winning the ranking on every metric and more about showing that the SF idea does not rely on one lucky parameter. It helps the family look like a real line of research instead of a single-point result.",
+    "interpretation_zh": "tau=10 的意义不在于每个指标都要赢，而在于它说明 SF 这条线不是靠一个幸运参数撑起来的。它让整个因子家族更像一条真实的研究路线，而不是单点命中。"
+  },
+  "analysis_note_en": "If tau=5 is the headline result, tau=10 is the first piece of evidence that the story survives a small change in timescale.",
+  "analysis_note_zh": "如果说 tau=5 是主结果，那么 tau=10 就是第一块稳健性证据：时间尺度稍微放慢一点，这条线仍然能成立。",
+  "plots": {
+    "nav": "website_data/plots/sf_amp_tau10_s20/nav.png",
+    "drawdown": "website_data/plots/sf_amp_tau10_s20/drawdown.png",
+    "ic_ts": "website_data/plots/sf_amp_tau10_s20/ic_ts.png",
+    "rankic_ts": "website_data/plots/sf_amp_tau10_s20/rankic_ts.png",
+    "turnover": "website_data/plots/sf_amp_tau10_s20/turnover.png",
+    "yearly_return": "website_data/plots/sf_amp_tau10_s20/yearly_return.png",
+    "cost_sensitivity": "website_data/plots/sf_amp_tau10_s20/cost_sensitivity.png",
+    "ic_rankic_dist": "website_data/plots/sf_amp_tau10_s20/ic_rankic_dist.png",
+    "quantile_return": "website_data/plots/sf_amp_tau10_s20/quantile_return.png"
+  },
+  "preview_plot": "website_data/plots/sf_amp_tau10_s20/nav.png",
+  "related_factors": [
+    "sf_amp_tau5_s20",
+    "sf_amp_tau20_s20",
+    "uniq_knn"
+  ],
+  "compare_recommendations": [
+    "sf_amp_tau5_s20",
+    "sf_amp_tau20_s20",
+    "rev_5d"
+  ]
+}

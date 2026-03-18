@@ -1,0 +1,55 @@
+{
+  "factor_id": "sf_amp_tau20_s20",
+  "factor_name_en": "Extended-Horizon Structure Function Variability (tau=20, s=20)",
+  "factor_name_zh": "结构函数振幅因子（tau=20, s=20）",
+  "family": "SF Core",
+  "status": "Exploratory",
+  "detail_ready": true,
+  "short_desc_en": "A slower-horizon Structure Function variability signal kept to show how the astronomy-inspired idea extends toward a short-to-medium timescale family.",
+  "short_desc_zh": "一个较慢尺度的 Structure Function 时域变异性信号，用来展示该天文思路如何延伸成短中周期家族。",
+  "metrics": {
+    "ic_mean": 0.014847139541821167,
+    "rankic_mean": -0.016859959377374063,
+    "annual_return": 0.1660936408474758,
+    "sharpe": 1.085204491410472,
+    "max_drawdown": -0.1781228084163015,
+    "icir": 0.059941195377579186,
+    "rankicir": -0.06851978724271236,
+    "avg_turnover": 0.05595472184342329,
+    "ann_vol": 0.15229540503076372,
+    "n_days": 1699,
+    "ic_std": 0.2476950859637793,
+    "rankic_std": 0.2460597158256246
+  },
+  "description": {
+    "motivation_en": "Tau=20 pushes the same idea to a slower horizon. The goal is not to create a new champion, but to see how far the same Structure Function logic can stretch before it fades.",
+    "motivation_zh": "tau=20 把同一条思路继续推向更慢的时间尺度。它的目标不是再造一个主冠军，而是看看 Structure Function 这条线往外延伸时还能保留多少意义。",
+    "construction_en": "Again the form stays the same, with the lag extended to $\\tau=20$:\n\n$$SF_t(20)=\\frac{1}{20}\\sum_{i=0}^{19}(r_{t-i}-r_{t-i-20})^2$$\n\nThis makes tau=20 a natural extension of the tau=5 and tau=10 results rather than a separate construction.",
+    "construction_zh": "形式仍然不变，只是固定滞后继续扩展到 $\\tau=20$：\n\n$$SF_t(20)=\\frac{1}{20}\\sum_{i=0}^{19}(r_{t-i}-r_{t-i-20})^2$$\n\n因此 tau=20 更像是 tau=5 和 tau=10 的自然延伸，而不是另一种完全不同的构造。",
+    "interpretation_en": "I treat tau=20 as family evidence. It shows that the SF idea can still say something at a slower horizon, even though the strongest result remains on the shorter lags.",
+    "interpretation_zh": "我更把 tau=20 当成家族证据来看。它说明 SF 这条线在更慢的时间尺度上仍然有研究意义，只是最强结果还是落在更短的滞后上。"
+  },
+  "analysis_note_en": "Tau=20 matters because it makes the whole SF family easier to trust. The result says this is a scalable line of thought, not just a single setting that happened to work once.",
+  "analysis_note_zh": "tau=20 的价值，在于它让整个 SF 家族更可信。它说明这不是一个偶然有效的参数点，而是一条可以沿时间尺度展开的研究思路。",
+  "plots": {
+    "nav": "website_data/plots/sf_amp_tau20_s20/nav.png",
+    "drawdown": "website_data/plots/sf_amp_tau20_s20/drawdown.png",
+    "ic_ts": "website_data/plots/sf_amp_tau20_s20/ic_ts.png",
+    "rankic_ts": "website_data/plots/sf_amp_tau20_s20/rankic_ts.png",
+    "turnover": "website_data/plots/sf_amp_tau20_s20/turnover.png",
+    "yearly_return": "website_data/plots/sf_amp_tau20_s20/yearly_return.png",
+    "cost_sensitivity": "website_data/plots/sf_amp_tau20_s20/cost_sensitivity.png",
+    "ic_rankic_dist": "website_data/plots/sf_amp_tau20_s20/ic_rankic_dist.png",
+    "quantile_return": "website_data/plots/sf_amp_tau20_s20/quantile_return.png"
+  },
+  "preview_plot": "website_data/plots/sf_amp_tau20_s20/nav.png",
+  "related_factors": [
+    "sf_amp_tau5_s20",
+    "sf_amp_tau10_s20",
+    "uniq_knn"
+  ],
+  "compare_recommendations": [
+    "sf_amp_tau5_s20",
+    "sf_amp_tau10_s20"
+  ]
+}

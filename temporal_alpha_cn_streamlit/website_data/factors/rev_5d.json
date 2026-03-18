@@ -1,0 +1,55 @@
+{
+  "factor_id": "rev_5d",
+  "factor_name_en": "5-Day Reversal Baseline",
+  "factor_name_zh": "5日反转基线因子",
+  "family": "Baseline",
+  "status": "Baseline",
+  "detail_ready": true,
+  "short_desc_en": "A short-horizon reversal baseline used as a practical benchmark for mean reversion.",
+  "short_desc_zh": "一个短周期反转基线，用于作为均值回复方向的实用对照。",
+  "metrics": {
+    "ic_mean": 0.005662733590614832,
+    "rankic_mean": 0.019383038145293772,
+    "annual_return": 0.0411031462435205,
+    "sharpe": 0.3216667305897524,
+    "max_drawdown": -0.2955045888260142,
+    "icir": 0.02932033101818789,
+    "rankicir": 0.1003049341593835,
+    "avg_turnover": 0.338093393830938,
+    "ann_vol": 0.16637949697997917,
+    "n_days": 1699,
+    "ic_std": 0.19313334447357172,
+    "rankic_std": 0.19324112325814724
+  },
+  "description": {
+    "motivation_en": "This baseline checks whether a standard short-horizon reversal rule can explain part of the same cross-sectional behavior captured by the custom factors.",
+    "motivation_zh": "这个基线用于检验一个标准的短周期反转规则，是否能解释自定义因子所捕捉到的部分横截面行为。",
+    "construction_en": "It ranks stocks by recent short-horizon return with the usual reversal interpretation.",
+    "construction_zh": "它按近期短周期收益排序，并采用常规的反转解释。",
+    "interpretation_en": "Compared with the two representative SF factors, this baseline is weaker but still directionally sensible, making it a useful benchmark rather than just a placeholder.",
+    "interpretation_zh": "相较两个代表性 SF 因子，这个基线更弱，但方向上仍然合理，因此它是一个真正有意义的 benchmark，而不是占位项。"
+  },
+  "analysis_note_en": "This page is mainly here as a clean benchmark. It helps answer whether the SF results are simply another face of short-term reversal or whether they capture something a little different.",
+  "analysis_note_zh": "这个页面最重要的作用是做一个干净的对照。它能帮助判断：SF 结果到底只是短期反转的另一种写法，还是确实抓到了稍微不同的东西。",
+  "plots": {
+    "nav": "website_data/plots/rev_5d/nav.png",
+    "drawdown": "website_data/plots/rev_5d/drawdown.png",
+    "ic_ts": "website_data/plots/rev_5d/ic_ts.png",
+    "rankic_ts": "website_data/plots/rev_5d/rankic_ts.png",
+    "turnover": "website_data/plots/rev_5d/turnover.png",
+    "yearly_return": "website_data/plots/rev_5d/yearly_return.png",
+    "cost_sensitivity": "website_data/plots/rev_5d/cost_sensitivity.png",
+    "ic_rankic_dist": "website_data/plots/rev_5d/ic_rankic_dist.png",
+    "quantile_return": "website_data/plots/rev_5d/quantile_return.png"
+  },
+  "preview_plot": "website_data/plots/rev_5d/nav.png",
+  "related_factors": [
+    "mom_20d",
+    "sf_amp_tau5_s20",
+    "sf_amp_tau10_s20"
+  ],
+  "compare_recommendations": [
+    "sf_amp_tau5_s20",
+    "mom_20d"
+  ]
+}
